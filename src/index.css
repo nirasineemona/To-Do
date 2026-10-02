@@ -21,7 +21,7 @@ input:focus-visible {
 }
 
 .row {
-  max-height: 120px;
+  max-height: 160px;
   overflow: hidden;
   transition: max-height 0.28s ease, opacity 0.25s ease, transform 0.28s ease, margin 0.28s ease;
 }
