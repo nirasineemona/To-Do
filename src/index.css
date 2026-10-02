@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body {
+  margin: 0;
+  background: #f4f5f7;
+  color: #1f2937;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.row {
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.28s ease, opacity 0.25s ease, transform 0.28s ease, margin 0.28s ease;
+}
+.row.removing {
+  max-height: 0;
+  opacity: 0;
+  transform: translateX(24px);
+  margin-bottom: 0 !important;
+}
+.row.entering {
+  animation: enter 0.25s ease;
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .row, .row.entering { transition: none; animation: none; }
+}
